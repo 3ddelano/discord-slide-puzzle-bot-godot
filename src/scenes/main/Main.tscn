@@ -1,0 +1,56 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://src/scenes/main/Main.gd" type="Script" id=1]
+[ext_resource path="res://addons/discord_gd/discord.gd" type="Script" id=2]
+
+[node name="Main" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DiscordBot" type="HTTPRequest" parent="."]
+script = ExtResource( 2 )
+
+[node name="CurrentPlayersTitle" type="RichTextLabel" parent="."]
+anchor_right = 1.0
+margin_left = 22.4746
+margin_top = 12.7492
+margin_right = -201.525
+margin_bottom = 29.7492
+text = "Current Players:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CurrentPlayersValue" type="RichTextLabel" parent="."]
+anchor_right = 1.0
+margin_left = 128.475
+margin_top = 12.7492
+margin_right = -95.5254
+margin_bottom = 29.7492
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Verbose" type="RichTextLabel" parent="."]
+anchor_right = 1.0
+margin_left = 25.4712
+margin_top = 40.4678
+margin_right = -198.529
+margin_bottom = 57.4678
+text = "Verbose"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CheckBox" type="CheckBox" parent="."]
+margin_left = 110.875
+margin_top = 34.4611
+margin_right = 134.875
+margin_bottom = 58.4611
+
+[connection signal="toggled" from="CheckBox" to="." method="_on_CheckBox_toggled"]
